@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-namespace BlockChain
+namespace BlockChain.Interfaces
 {
     /// <summary>
     /// 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
+using BlockChain.Interfaces;
 
 namespace BlockChain
 {
@@ -95,6 +95,10 @@ namespace BlockChain
         /// </remarks>
         public string ComputeHash()
         {
+            // TODO: Because i can't get this to serialize correctly without ignoring the has i'm unable to print out the structure
+            // with the hash. Change how this is turned into bytes so i can remove this serialization
+            // OR
+            // figure out how to ignore the ignore - or create a temporary setting to ignore a field
             var bf = new DataContractSerializer(typeof(Block<Transaction>));
 
             using (var ms = new MemoryStream())
@@ -117,11 +121,13 @@ namespace BlockChain
         /// </summary>
         public void MineBlock(int difficulty)
         {
+            if (difficulty == 0) return;
+
             do
             {
                 _nonce++;
                 Hash = ComputeHash();
-            } while (difficulty != 0 && Hash.Take(difficulty).ToString() != new string('0', difficulty));
+            } while (!Hash.StartsWith(new string('0', difficulty)));
         }
     }
 }

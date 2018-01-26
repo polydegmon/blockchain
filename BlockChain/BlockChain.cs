@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using BlockChain.Interfaces;
 
 namespace BlockChain
 {
@@ -17,7 +18,7 @@ namespace BlockChain
         /// <summary>
         /// 
         /// </summary>
-        private int _difficulty = 1;
+        private int _difficulty = 2;
 
         /// <summary>
         /// Ensure we only create the block chain a single time and add a genesis block to it

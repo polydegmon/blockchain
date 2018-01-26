@@ -1,7 +1,5 @@
 using BlockChain.Tests.Fixture;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 using Xunit;
 using Xunit.Abstractions;
 

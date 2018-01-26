@@ -1,4 +1,5 @@
 using System.Runtime.Serialization;
+using BlockChain.Interfaces;
 
 namespace BlockChain
 {

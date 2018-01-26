@@ -1,4 +1,4 @@
-namespace BlockChain
+namespace BlockChain.Interfaces
 {
     /// <summary>
     /// Describes the smallest data level of the block in the blockchain.
